@@ -1,47 +1,94 @@
 package br.com.ricardo347.sockMerchant;
 
-import java.util.ArrayList;
+import java.util.*;
+
 
 public class Socks {
+
+    private ArrayList<Integer> socks;
+    private int ar[];
+
     public Socks(){
-
+        //this.socks = new ArrayList<>();//new ArrayList<>(Arrays.asList(1,2,1,3,3,1,1,3,2,1,2,3,1,1));
     }
-    public ArrayList<Integer> generate(int n) {
-        long start = System.nanoTime();
-        ArrayList<Integer> socks = new ArrayList<>();
 
+    private void generate(int n) {
+        this.socks = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < n; i++ ){
-            socks.add((int)(Math.random() * 3  + 1));
+            this.socks.add((int)(Math.random() * 100  + 1));
         }
 
-        System.out.println("Tamanho do vetor: "+socks.size());
-        long finish = System.nanoTime();
-        System.out.println(start);
-        System.out.println(finish);
-        System.out.println((finish-start) / 1000000f);
-        return socks;
+        /*System.out.println("Tamanho do vetor: " + this.socks.size());
+        for (int sock:socks) {
+           sb.append(", ");
+           sb.append(sock);
+        }
+        System.out.println(sb.toString());*/
     }
 
-    public int[] generate1(int n){
+    private void generateOld(int n){
+        StringBuilder sb = new StringBuilder();
         long start = System.nanoTime();
-        int x[] = new int[n] ;
+        this.ar = new int[n] ;
         for(int i = 0; i < n; i++){
-            x[i] = (int)(Math.random() * 3  + 1);
+            ar[i] = (int)(Math.random() * 3  + 1);
         }
-        System.out.println("Tamanho do vetor: "+x.length);
+        System.out.println("Tamanho do vetor: " + ar.length);
+        for (int i:ar) {
+           sb.append(", ");
+           sb.append(i);
+        }
+        System.out.println(sb.toString());
+        System.out.println("Tamanho do vetor: " + ar.length);
         long finish = System.nanoTime();
-        System.out.println(start);
-        System.out.println(finish);
         System.out.println((finish-start) / 1000000f);
-        return x;
+
     }
 
-    public int getPairs() {
-        
-        return 0;
+    public int getPairs(int n) {
+        //long start = System.nanoTime();
+        generateOld(n);
+        int pairs = 0;
+
+        Map<Integer, Integer> colors = new HashMap<Integer, Integer>();
+
+        for(int i = 0; i < ar.length; i++){
+           if(colors.containsKey(ar[i])){
+               colors.replace(ar[i], colors.get(ar[i]) + 1);
+           }else{
+               colors.put(ar[i], 1) ;
+           }
+        }
+
+        for(Map.Entry<Integer,Integer> color: colors.entrySet()){
+            pairs = pairs + color.getValue() / 2;
+        }
+
+        //long finish = System.nanoTime();
+       // System.out.println((finish-start) / 1000000f);
+        System.out.println(pairs);
+        return pairs;
     }
 
-    public int getPairs1(){
-        return 0;
+    public int getPairsOld(int n){
+
+        long start = System.nanoTime();
+        int pairs = 0;
+        Set<Integer> colors = new HashSet<>();
+        generate(n);
+
+        for(int i = 0; i < socks.size(); i++){
+            if(!colors.contains(socks.get(i))){
+                colors.add(socks.get(i));
+            }else{
+                pairs++;
+                colors.remove(socks.get(i));
+            }
+        }
+        long finish = System.nanoTime();
+        System.out.println((finish-start) / 1000000f);
+        return pairs;
     }
 }
+

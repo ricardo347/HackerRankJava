@@ -1,6 +1,4 @@
-package br.com.ricardo347;
-
-import br.com.ricardo347.sockMerchant.Socks;
+package br.com.ricardo347.sockMerchant;
 
 public class Main {
 
