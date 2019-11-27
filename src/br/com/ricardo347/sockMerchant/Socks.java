@@ -7,9 +7,11 @@ public class Socks {
 
     private ArrayList<Integer> socks;
     private int ar[];
+    private long a;
 
     public Socks(){
         //this.socks = new ArrayList<>();//new ArrayList<>(Arrays.asList(1,2,1,3,3,1,1,3,2,1,2,3,1,1));
+
     }
 
     private void generate(int n) {
