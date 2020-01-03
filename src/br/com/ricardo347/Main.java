@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Pattern p = new Pattern();
-        p.play(p.generator());
+        p.play(p.generator(),10);
 
     }
 }
