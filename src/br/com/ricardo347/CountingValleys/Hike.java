@@ -12,8 +12,8 @@ public class Hike {
     }
 
     public int countingValleys(int n, String s){
-   
-        System.out.println(v+v2);
+
+
         int sealvl = 0;
         int valleys = 0;
         for(int i = 0; i < s.length(); i++){
@@ -25,5 +25,13 @@ public class Hike {
                valleys ++;
         }
         return valleys;
+    }
+
+    public void mmc(float n){
+
+        for(int i = 1; i<=n; i++){
+            if(n%i == 0)
+                System.out.printf("%f / %d = %f\n",n,i,n/i);
+        }
     }
 }
