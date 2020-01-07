@@ -103,7 +103,6 @@ public class HourGlass {
         int line = 0;
 
         while(line < 4){
-            System.out.printf("Linha %d - i = %d - j =%d \n",line,i,j);
 
             current += arr[i+line][j] + arr[i+line][j-1] + arr[i+line][j+1];
 
