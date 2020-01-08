@@ -10,7 +10,6 @@ public class Main {
             System.out.println("menor");
         }
 
-
         HourGlass h = new HourGlass();
         h.play(h.generate());
 
