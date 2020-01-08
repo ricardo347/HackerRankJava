@@ -24,6 +24,8 @@ public class Pattern {
               tailCount++;
        }
 
+
+
        System.out.println ((n / s.length() * count) + tailCount);
        return  (n / s.length() * count) + tailCount;
     }
