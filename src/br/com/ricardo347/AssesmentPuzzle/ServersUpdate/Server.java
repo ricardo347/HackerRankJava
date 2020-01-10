@@ -1,9 +1,6 @@
-package br.com.ricardo347.Amazon.ServersUpdate;
+package br.com.ricardo347.AssesmentPuzzle.ServersUpdate;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class Server {
@@ -243,6 +240,8 @@ public class Server {
         return days;
     }
 
+
+
     //pass a function as reference example
     public int play(){
         System.out.printf("Days to Update all Servers: %d\n",playLegacy(4,5,generatorTestCaseDefault()));
@@ -251,30 +250,7 @@ public class Server {
         return 0;
     }
 
-    public void debug(List<List<Integer>> grid, int i, int j){
-        System.out.println(" ");
-        System.out.printf("i:%d - j:%d",i,j);
-        System.out.println(" -----------------------------");
-        for(int y = 0; y < grid.size(); y++){
-            System.out.println(" ");
-            for(int x = 0; x < grid.get(y).size(); x++)
-                System.out.printf("%d ",grid.get(y).get(x));
-        }
-        System.out.println(" ");
-    }
-    public void debugDouble(List<List<Integer>> grid, List<List<Integer>> temp, int i, int j){
-        System.out.println(" ");
-        System.out.printf("i:%d - j:%d\n",i,j);
-        System.out.println(" -----------------------------");
-        for(int y = 0; y < grid.size(); y++){
-            System.out.println(" ");
-            for(int x = 0; x < grid.get(y).size(); x++)
-                System.out.printf("%d ",grid.get(y).get(x));
-            System.out.printf("   ");
-            for(int z = 0; z < temp.get(y).size(); z++)
-                System.out.printf("%d ",temp.get(y).get(z));
-        }
-        System.out.println(" ");
-    }
+
+
 
 }
