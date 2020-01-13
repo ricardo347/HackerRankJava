@@ -198,25 +198,21 @@ public class Parking {
 
         //looks left
         if(j > 0 && parking.get(i).get(j-1) == 1){
-
             parking.get(i).set(j-1,0);
             getContigous(i, j-1, parking);
         }
         //looks right
         if(j+1 < parking.get(i).size() && parking.get(i).get(j+1) == 1){
-
             parking.get(i).set(j+1,0);
             getContigous(i, j+1, parking);
         }
         //looks up
         if(i > 0 && parking.get(i-1).get(j) == 1){
-
             parking.get(i-1).set(j,0);
             getContigous(i-1, j, parking);
         }
         //looks down
         if(i+1 < parking.size() && parking.get(i+1).get(j) == 1){
-
             parking.get(i+1).set(j,0);
             getContigous(i+1, j, parking);
         }
@@ -226,7 +222,6 @@ public class Parking {
 
     public int getContigousV2(int i, int j, List<List<Integer>> parking){
         boolean hasgroup = false;
-
 
         Tools.debug(parking,i, j);
 
