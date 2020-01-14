@@ -1,5 +1,9 @@
 package br.com.ricardo347;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tools {
@@ -29,6 +33,53 @@ public class Tools {
                 System.out.printf("%d ",temp.get(y).get(z));
         }
         System.out.println(" ");
+    }
+
+    public static void arrayStringfy(String s){
+        String base = s.replace(" ",",").trim();
+        System.out.printf(base);
+    }
+
+    public static List<List<Object>> fileToArray(String filepath){
+        BufferedReader reader;
+        List<List<Object>> testCases = new ArrayList<>();
+        try{
+            reader = new BufferedReader(new
+                    FileReader(filepath));
+            int cont =0;
+            String line = reader.readLine();
+            while(line != null){
+               // System.out.println(line);
+                testCases.add(new ArrayList<>());
+
+                if(cont%2 == 0){
+                    //String params = line.replace(" ","").trim();
+                    String[] params = line.trim().split(" ");
+                    testCases.get(cont).add(Integer.valueOf(params[0]));
+                    testCases.get(cont).add(Integer.valueOf(params[1]));
+                }else{
+                    String arr = line.replace(" ", "").trim();
+                    int[] temp = new int[arr.length()];
+                    for(int i = 0;i < arr.length(); i++ ){
+                       temp[i] = Character.getNumericValue(arr.charAt(i));
+                        //System.out.printf("%d",Character.getNumericValue(arr.charAt(i)));
+                    }
+                    System.out.println(" ");
+                    testCases
+                            .get(cont)
+                            .add(temp);
+                }
+
+                line = reader.readLine();
+                cont++;
+            }
+            System.out.println("##########################################");
+            reader.close();
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return testCases;
     }
 
 }
