@@ -4,6 +4,7 @@ package br.com.ricardo347;
 import br.com.ricardo347.AssesmentPuzzle.TreasureTruckPop.Parking;
 import br.com.ricardo347.BirthdayChocolate.Bar;
 import br.com.ricardo347.Java1DGame.Game1D;
+import br.com.ricardo347.Subarray.Subarray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class Main {
 
     public static void main (String[] args) {
-        Game1D g = new Game1D();
+        /*Game1D g = new Game1D();
 
         List<List<Object>> testCases = Tools.fileToArray("C:\\Users\\rgoncalves\\Desktop\\java1d.txt");
         //int[] arr = (int[]) testCases.get(0).get(2);
@@ -32,8 +33,9 @@ public class Main {
         if(g.play(4,g.longTestCaseGenerator()))
             System.out.printf("YES");
         else
-            System.out.printf("NO");
-
+            System.out.printf("NO");*/
+        Subarray s = new Subarray();
+        s.play();;
 
 
     }

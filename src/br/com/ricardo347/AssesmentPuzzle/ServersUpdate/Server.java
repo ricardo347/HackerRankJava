@@ -1,5 +1,7 @@
 package br.com.ricardo347.AssesmentPuzzle.ServersUpdate;
 
+import br.com.ricardo347.Tools;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -216,7 +218,7 @@ public class Server {
                     outDated++;
                 }
 
-                //debugDouble(grid, temp, i, j);
+                Tools.debugDouble(grid, temp, i, j);
                 //controls the counters i,j (rows and columns)
                 if(j+1 >= columns){
                     j=0;
@@ -245,8 +247,8 @@ public class Server {
     //pass a function as reference example
     public int play(){
         System.out.printf("Days to Update all Servers: %d\n",playLegacy(4,5,generatorTestCaseDefault()));
-        System.out.printf("Days to Update all Servers: %d\n",playLegacy(5,5,generatorTestCase1()));
-        System.out.printf("Days to Update all Servers: %d\n",playLegacy(5,6,generatorTestCase2()));
+        //System.out.printf("Days to Update all Servers: %d\n",playLegacy(5,5,generatorTestCase1()));
+        //System.out.printf("Days to Update all Servers: %d\n",playLegacy(5,6,generatorTestCase2()));
         return 0;
     }
 
