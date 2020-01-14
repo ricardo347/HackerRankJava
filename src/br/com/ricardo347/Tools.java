@@ -1,8 +1,10 @@
 package br.com.ricardo347;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,22 @@ public class Tools {
         System.out.printf(base);
     }
 
+    public static List<String> resultFileToArray(String filePath){
+        BufferedReader reader;
+        List<String> result = new ArrayList<>();
+        try{
+            reader = new BufferedReader(new FileReader(filePath));
+            String line = reader.readLine();
+            while (line != null){
+                result.add(line.trim());
+                line = reader.readLine();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
     public static List<List<Object>> fileToArray(String filepath){
         BufferedReader reader;
         List<List<Object>> testCases = new ArrayList<>();
@@ -64,7 +82,7 @@ public class Tools {
                        temp[i] = Character.getNumericValue(arr.charAt(i));
                         //System.out.printf("%d",Character.getNumericValue(arr.charAt(i)));
                     }
-                    System.out.println(" ");
+                   // System.out.println(" ");
                     testCases
                             .get(cont)
                             .add(temp);
