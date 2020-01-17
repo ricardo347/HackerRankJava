@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HackerRankJava.iml" filepath="$PROJECT_DIR$/HackerRankJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BackgroundJava.iml" filepath="$PROJECT_DIR$/BackgroundJava.iml" />
     </modules>
   </component>
 </project>
