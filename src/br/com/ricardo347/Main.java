@@ -17,9 +17,14 @@ public class Main {
 
     public static void main(String[] args) {
         AbsoluteNumbers a = new AbsoluteNumbers();
+       a.run(a.defaultTestCaseGenerator());
         a.run(a.testCase1Generator());
+        a.run(a.testCase2Generator());
+        a.run(a.testCase3Generator());
+
 
     }
+
 
 
 }

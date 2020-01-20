@@ -37,9 +37,10 @@ public class Tools {
         System.out.println(" ");
     }
 
-    public static void arrayStringfy(String s){
+    public static String arrayStringfy(String s){
         String base = s.replace(" ",",").trim();
         System.out.printf(base);
+        return s;
     }
 
     public static List<String> resultFileToArray(String filePath){
