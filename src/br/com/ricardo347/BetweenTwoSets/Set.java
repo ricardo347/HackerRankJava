@@ -37,4 +37,6 @@ public class Set {
         return factor % arr.get(next) == 0 && getFactoriesA(next + 1, factor, arr);
     }
 
+
+
 }
